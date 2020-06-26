@@ -13,6 +13,7 @@ router.register('profile',views.ProfileViewSet)
 
 urlpatterns = [
     
+    path('login/', views.LoginViewSet.as_view()),
     path('', include(router.urls))
 
 ]
