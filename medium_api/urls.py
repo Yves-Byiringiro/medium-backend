@@ -7,6 +7,7 @@ from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register('profile',views.ProfileViewSet)
+router.register('articles',views.ArticleViewSet)
 
 
 

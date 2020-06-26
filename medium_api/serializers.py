@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from medium_api.models import UserInfo
+from medium_api.models import UserInfo, Category, Article
 
 
 
@@ -26,4 +26,18 @@ class ProfileSerializer(serializers.ModelSerializer):
 
         )
         return user
+
+
+
+class ArticleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Article
+        fields = ('id','title','description','claps','timestamp','category','author')
+
+
+        extra_kwargs = {
+
+            'author':{'read_only':True}
+        }
+
 
